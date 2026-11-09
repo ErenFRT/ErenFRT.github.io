@@ -1,15 +1,207 @@
 <!doctype html>
-<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tuncer Studio</title>
-<style>body{margin:0;font-family:system-ui,sans-serif;background:linear-gradient(180deg,#1B4F72,#3F9BB8);color:#F6F3E4;min-height:100vh}
-main{max-width:640px;margin:0 auto;padding:48px 16px}h1{font-size:2.4rem;margin:0 0 8px}a{color:#FFC145}section{background:rgba(5,30,38,.55);border-radius:16px;padding:18px;margin-top:18px}h2{margin:0 0 6px;font-size:1.25rem}p{margin:4px 0;line-height:1.5}</style></head>
-<body><main>
-<h1>Tuncer Studio</h1>
-<p>Mobil oyunlar / Mobile games</p>
-<section><h2>Letter Harbor: Word Puzzle</h2>
-<p>Harfleri birleştir, bulmacaları çöz, limandan limana yelken aç.</p>
-<p><a href="https://erenfrt.github.io/deepgold-privacy/letter-harbor.html">Gizlilik politikası / Privacy policy</a></p></section>
-<section><h2>Deep Gold: Idle Mining</h2>
-<p><a href="https://erenfrt.github.io/deepgold-privacy/">Gizlilik politikası / Privacy policy</a></p></section>
-<section><p>İletişim / Contact: tuncerstudio@gmail.com</p></section>
-</main></body></html>
+<meta name="description" content="Tuncer Studio - Letter Harbor ve Deep Gold mobil oyunlarının geliştiricisi.">
+<link rel="icon" href="img/lh-icon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@500;700;800&display=swap">
+<style>
+:root{
+  --sky1:#123f5c;--sky2:#2f8fb0;--sea:#0a3f55;--deep:#072c3c;
+  --ink:#f6f3e4;--muted:#c7dfe0;--gold:#ffc145;--gold-ink:#3b2500;
+  --card:rgba(6,34,46,.62);--line:rgba(255,255,255,.14);
+  --display:"Baloo 2","Trebuchet MS",sans-serif;--body:Nunito,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);color:var(--ink);background:var(--deep);line-height:1.55}
+a{color:var(--gold)}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+
+/* Hero: gökyüzü, güneş, deniz feneri, dalgalar */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--sky1),var(--sky2) 78%,#58b4c9);padding-block:28px 150px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:10px;font:800 22px var(--display);color:var(--ink);text-decoration:none}
+.brand i{width:34px;height:34px;border-radius:10px;background:var(--gold);display:grid;place-items:center;font-style:normal;color:var(--gold-ink);font-size:18px}
+nav .links{display:flex;gap:18px;font-weight:800;font-size:15px}
+nav .links a{color:var(--ink);text-decoration:none;opacity:.85}
+nav .links a:hover{opacity:1;color:var(--gold)}
+.hero h1{position:relative;z-index:2;font:800 clamp(42px,9vw,78px)/1 var(--display);margin:64px 0 12px;max-width:12ch;text-wrap:balance;text-shadow:0 4px 18px rgba(0,0,0,.25)}
+.hero p.lead{position:relative;z-index:2;font-size:clamp(17px,2.4vw,20px);max-width:34ch;color:var(--muted);margin:0 0 26px}
+.btn{display:inline-block;background:linear-gradient(180deg,#ffd873,var(--gold));color:var(--gold-ink);font:800 18px var(--display);padding:12px 26px;border-radius:16px;text-decoration:none;box-shadow:0 5px 0 #c98a14,0 10px 18px rgba(0,0,0,.25);position:relative;z-index:2}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #c98a14}
+.sun{position:absolute;right:9%;top:90px;width:110px;height:110px;border-radius:50%;background:var(--gold);box-shadow:0 0 70px rgba(255,193,69,.6)}
+.cloud{position:absolute;height:26px;border-radius:20px;background:rgba(255,255,255,.22)}
+.cloud::before,.cloud::after{content:"";position:absolute;border-radius:50%;background:inherit}
+.cloud::before{width:44px;height:44px;left:16px;top:-22px}
+.cloud::after{width:30px;height:30px;left:52px;top:-12px}
+.c1{width:120px;left:6%;top:120px}.c2{width:150px;right:28%;top:60px}.c3{width:100px;right:4%;top:230px}
+.scene{position:absolute;left:0;right:0;bottom:0;height:170px;z-index:1}
+.scene svg{position:absolute;bottom:0;left:0;width:100%;height:100%}
+.boat{animation:bob 4s ease-in-out infinite;transform-origin:center}
+@keyframes bob{50%{transform:translateY(-6px) rotate(-1.5deg)}}
+@media (prefers-reduced-motion:reduce){.boat{animation:none}}
+
+/* Oyunlar */
+section{padding-block:56px}
+h2{font:800 clamp(30px,5vw,42px)/1.1 var(--display);margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 28px}
+.game{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px;margin-bottom:26px}
+.game .head{display:flex;gap:16px;align-items:center;margin-bottom:12px}
+.game .head img{width:76px;height:76px;border-radius:20px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.game h3{font:800 28px/1.1 var(--display);margin:0}
+.tag{display:inline-block;font-size:13px;font-weight:800;padding:3px 10px;border-radius:99px;background:rgba(255,193,69,.18);color:var(--gold);margin-top:4px}
+.game ul{padding:0;margin:14px 0 18px;list-style:none;display:grid;gap:8px}
+.game li{padding-left:28px;position:relative}
+.game li::before{content:"⚓";position:absolute;left:0;top:0;color:var(--gold)}
+.dg li::before{content:"⛏"}
+.small{display:flex;flex-wrap:wrap;gap:10px 18px;font-weight:700;font-size:15px}
+.shots{display:flex;gap:12px;justify-content:center}
+.shots img{width:31%;max-width:150px;border-radius:16px;border:3px solid rgba(255,255,255,.15);box-shadow:0 10px 24px rgba(0,0,0,.35)}
+.shots img:nth-child(2){transform:translateY(-14px)}
+.dg-art{display:grid;place-items:center;min-height:220px;border-radius:20px;background:radial-gradient(circle at 50% 35%,#5a3a12,#1d140a 70%);position:relative;overflow:hidden}
+.dg-art img{width:120px;border-radius:28px;box-shadow:0 0 50px rgba(255,193,69,.45)}
+.dg-art span{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--gold);opacity:.7}
+.soon{background:rgba(255,255,255,.1);color:var(--muted)}
+
+/* Hakkında ve iletişim */
+.about{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.about div{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
+.about b{display:block;font:800 20px var(--display);color:var(--gold);margin-bottom:4px}
+.contact{text-align:center;background:linear-gradient(180deg,var(--sea),var(--deep));border-top:1px solid var(--line)}
+.mail{display:inline-flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center;background:var(--card);border:1px solid var(--line);padding:12px 18px;border-radius:16px;font-weight:800;font-size:18px;user-select:all}
+footer{padding-block:24px 34px;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--muted)}
+
+@media (max-width:760px){
+  .game{grid-template-columns:1fr;padding:20px}
+  .about{grid-template-columns:1fr}
+  nav .links{display:none}
+  .sun{width:64px;height:64px;right:-14px;top:26px}
+  .hero h1{margin-top:44px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="sun"></div>
+  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#"><i>⛵</i>Tuncer Studio</a>
+      <div class="links"><a href="#oyunlar">Oyunlar</a><a href="#hakkinda">Hakkında</a><a href="#iletisim">İletişim</a></div>
+    </nav>
+    <h1>Küçük stüdyo, keyifli oyunlar.</h1>
+    <p class="lead">Telefonda rahatlatan, her gün dönüp oynamak isteyeceğin oyunlar yapıyoruz.</p>
+    <a class="btn" href="#oyunlar">Oyunlarımızı gör</a>
+  </div>
+  <div class="scene" aria-hidden="true">
+    <svg viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice">
+      <path d="M0 95 C150 70 260 110 400 92 S650 70 800 96 1050 74 1200 90 V170 H0Z" fill="#14506b" opacity=".75"/>
+      <g transform="translate(140 18)">
+        <path d="M14 98 22 18h22l8 80z" fill="#fffaf0"/>
+        <path d="M17 54h32l1 14H16zM19 30h28l.8 12H18z" fill="#d9483b"/>
+        <path d="M16 18 33 0l17 18z" fill="#d9483b"/>
+        <rect x="27" y="7" width="12" height="9" fill="#ffe08a"/>
+        <path d="M-6 104h84l-10-10H4z" fill="#8a5429"/>
+      </g>
+      <g class="boat" transform="translate(820 30)">
+        <path d="M44 4v76" stroke="#fffaf0" stroke-width="4"/>
+        <path d="M50 8l46 64H50z" fill="#fffaf0"/>
+        <path d="M38 22 2 72h36z" fill="#ffc145"/>
+        <path d="M-6 82h112l-16 22H10z" fill="#8a5429"/>
+      </g>
+      <path d="M0 122 C120 108 240 132 360 120 S600 104 720 122 960 106 1080 120 1200 112 1200 112 V170 H0Z" fill="#0a3f55"/>
+      <path d="M0 146 C150 136 300 156 450 144 S750 134 900 148 1100 138 1200 144 V170 H0Z" fill="#072c3c"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+  <section id="oyunlar">
+    <div class="wrap">
+      <h2>Oyunlarımız</h2>
+      <p class="sub">Android için, Google Play'de.</p>
+
+      <article class="game">
+        <div>
+          <div class="head">
+            <img src="img/lh-icon.webp" alt="Letter Harbor simgesi" width="76" height="76">
+            <div><h3>Letter Harbor</h3><span class="tag">Kelime bulmaca · 7 dil</span></div>
+          </div>
+          <p>Harfleri birleştir, bulmacaları çöz ve limandan limana yelken aç. İstanbul'dan başlayan yolculuk dünyanın dört bir yanındaki limanlara uzanıyor.</p>
+          <ul>
+            <li>Binlerce bölüm, hiçbir cevap kelimesi ikinci kez çıkmaz</li>
+            <li>Günün Bulmacası, günlük ödül ve haftalık hedefler</li>
+            <li>Her limanda bir hatıra, başarımlar ve gemi görünümleri</li>
+            <li>Türkçe, İngilizce, İspanyolca, Fransızca, Portekizce, Almanca, İtalyanca</li>
+          </ul>
+          <div class="small">
+            <span class="tag soon">Yakında Google Play'de</span>
+            <a href="https://erenfrt.github.io/deepgold-privacy/letter-harbor.html">Gizlilik politikası</a>
+          </div>
+        </div>
+        <div class="shots">
+          <img src="img/lh-1.webp" alt="Letter Harbor oyun ekranı" width="150" height="267" loading="lazy">
+          <img src="img/lh-2.webp" alt="Limana varış ekranı" width="150" height="267" loading="lazy">
+          <img src="img/lh-3.webp" alt="Limanlar haritası" width="150" height="267" loading="lazy">
+        </div>
+      </article>
+
+      <article class="game dg">
+        <div>
+          <div class="head">
+            <img src="img/dg-icon.webp" alt="Deep Gold simgesi" width="76" height="76">
+            <div><h3>Deep Gold: Idle Mining</h3><span class="tag">Madencilik · Idle</span></div>
+          </div>
+          <p>Kazmanı al, derinlere in, altın ve elmas çıkar. Ekibini büyüt, yeni maden bölgeleri aç, sen yokken bile kazanmaya devam et.</p>
+          <ul>
+            <li>Kömürden elmasa, volkanik ve meteor bölgeleri</li>
+            <li>Madenci ekibi, yetenek ağacı ve kazma evrimi</li>
+            <li>Reklamsız oyun</li>
+          </ul>
+          <div class="small">
+            <span class="tag soon">Yakında Google Play'de</span>
+            <a href="https://erenfrt.github.io/deepgold-privacy/">Gizlilik politikası</a>
+          </div>
+        </div>
+        <div class="dg-art" aria-hidden="true">
+          <span style="left:18%;top:24%"></span><span style="left:78%;top:30%;width:6px;height:6px"></span>
+          <span style="left:30%;top:76%;width:7px;height:7px"></span><span style="left:70%;top:72%"></span>
+          <img src="img/dg-icon.webp" alt="" width="120" height="120" loading="lazy">
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="hakkinda">
+    <div class="wrap">
+      <h2>Hakkında</h2>
+      <p class="sub">Tuncer Studio, Türkiye'de kurulmuş bağımsız bir mobil oyun stüdyosu.</p>
+      <div class="about">
+        <div><b>Sade ve keyifli</b>Kısa molalarda açıp rahatça oynanacak oyunlar.</div>
+        <div><b>Herkes için</b>Birden fazla dil, Türkiye'den dünyaya.</div>
+        <div><b>Gizliliğe saygı</b>Hesap açmadan oynanır, kişisel bilgi istenmez.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim" class="contact">
+    <div class="wrap">
+      <h2>İletişim</h2>
+      <p class="sub">Öneri, hata bildirimi veya iş birliği için yaz.</p>
+      <span class="mail">✉ tuncerstudio@gmail.com</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Tuncer Studio · <a href="app-ads.txt">app-ads.txt</a></div>
+</footer>
+
+</body>
+</html>
