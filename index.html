@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tuncer Studio</title>
-<meta name="description" content="Tuncer Studio - Letter Harbor ve Deep Gold mobil oyunlarının geliştiricisi.">
+<meta name="description" content="Tuncer Studio - Word Vials, Letter Harbor ve Deep Gold mobil oyunlarının geliştiricisi.">
 <link rel="icon" href="img/lh-icon.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@500;700;800&display=swap">
@@ -58,6 +58,8 @@ h2{font:800 clamp(30px,5vw,42px)/1.1 var(--display);margin:0 0 8px}
 .game li{padding-left:28px;position:relative}
 .game li::before{content:"⚓";position:absolute;left:0;top:0;color:var(--gold)}
 .dg li::before{content:"⛏"}
+.wv li::before{content:"🧪"}
+.new{background:rgba(61,220,151,.18);color:#5ff0b0}
 .small{display:flex;flex-wrap:wrap;gap:10px 18px;font-weight:700;font-size:15px}
 .shots{display:flex;gap:12px;justify-content:center}
 .shots img{width:31%;max-width:150px;border-radius:16px;border:3px solid rgba(255,255,255,.15);box-shadow:0 10px 24px rgba(0,0,0,.35)}
@@ -126,6 +128,32 @@ footer a{color:var(--muted)}
     <div class="wrap">
       <h2>Oyunlarımız</h2>
       <p class="sub">Android için, Google Play'de.</p>
+
+      <article class="game wv">
+        <div>
+          <div class="head">
+            <img src="img/wv-icon.webp" alt="Word Vials simgesi" width="76" height="76">
+            <div><h3>Word Vials</h3><span class="tag">Tüp sıralama + kelime · 4 dil</span> <span class="tag new">Yeni</span></div>
+          </div>
+          <p>Renkli cam tüplerdeki karışık harfleri tüpten tüpe taşı, gizli kelimeleri kur. Her hamle önemli: en az hamleyle bitir, üç yıldızı kap.</p>
+          <ul>
+            <li>Her dilde 1.000'den fazla bölüm, aralarda dinlendiren kolay bölümler</li>
+            <li>Her gün yeni Günlük Bulmaca, seri ödülleri ve 7 günlük giriş ödülü</li>
+            <li>Temalar: Hayvanlar, Yiyecekler, Doğa, Şehir ve daha fazlası</li>
+            <li>Sözlüğüm: bulduğun her kelimenin anlamını öğren</li>
+            <li>Türkçe, İngilizce, Almanca, İspanyolca</li>
+          </ul>
+          <div class="small">
+            <span class="tag soon">Yakında Google Play'de</span>
+            <a href="https://erenfrt.github.io/WordVials-privacy/">Gizlilik politikası</a>
+          </div>
+        </div>
+        <div class="shots">
+          <img src="img/wv-1.webp" alt="Word Vials oyun ekranı" width="150" height="267" loading="lazy">
+          <img src="img/wv-2.webp" alt="Günlük bulmaca" width="150" height="267" loading="lazy">
+          <img src="img/wv-3.webp" alt="Temalar ekranı" width="150" height="267" loading="lazy">
+        </div>
+      </article>
 
       <article class="game">
         <div>
