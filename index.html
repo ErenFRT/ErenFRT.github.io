@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tuncer Studio</title>
-<meta name="description" content="Tuncer Studio - Deep Gold, Nope Door, Word Vials ve Letter Harbor mobil oyunlarının geliştiricisi.">
+<meta name="description" content="Tuncer Studio - Tiny Kingdom: One Decision, Deep Gold, Nope Door, Word Vials ve Letter Harbor mobil oyunlarının geliştiricisi.">
 <link rel="icon" href="img/lh-icon.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@500;700;800&display=swap">
@@ -76,6 +76,10 @@ h2{font:800 clamp(30px,5vw,42px)/1.1 var(--display);margin:0 0 8px}
 .nd li::before{content:"🚪"}
 .nd-art{display:grid;place-items:center;min-height:220px;border-radius:20px;background:radial-gradient(circle at 50% 40%,#2b2f6a,#121433 72%);overflow:hidden}
 .nd-art svg{width:150px;height:190px;filter:drop-shadow(0 0 40px rgba(255,159,28,.35))}
+.tk li::before{content:"👑"}
+.tk-art{display:flex;justify-content:center;align-items:flex-end;gap:4px;min-height:220px;border-radius:20px;background:radial-gradient(circle at 50% 30%,#3a4a8c,#1a2148 72%);padding:18px 10px;overflow:hidden}
+.tk-art img{width:31%;max-width:130px;height:auto;filter:drop-shadow(0 8px 14px rgba(0,0,0,.4))}
+.tk-art img:nth-child(3){width:36%;max-width:150px}
 .nd-head{width:76px;height:76px;border-radius:20px;box-shadow:0 6px 16px rgba(0,0,0,.35);flex:none}
 
 /* Hakkında ve iletişim */
@@ -138,6 +142,30 @@ footer a{color:var(--muted)}
       <h2>Oyunlarımız</h2>
       <p class="sub">Android için, Google Play'de.</p>
 
+      <article class="game tk">
+        <div>
+          <div class="head">
+            <svg class="nd-head" viewBox="0 0 76 76" role="img" aria-label="Tiny Kingdom simgesi"><rect width="76" height="76" rx="20" fill="#1f2a5a"/><path d="M38 12v16" stroke="#f3ead2" stroke-width="2"/><path d="M38 13h14l-4 4 4 4H38z" fill="#e7b142"/><rect x="26" y="28" width="24" height="26" fill="#d9cfb4"/><path d="M26 28h4v-4h4v4h4v-4h4v4h4v-4h4v7H26z" fill="#c4b894"/><rect x="12" y="38" width="16" height="26" fill="#cbbf9d"/><rect x="48" y="38" width="16" height="26" fill="#cbbf9d"/><path d="M33 64V54a5 5 0 0 1 10 0v10z" fill="#5b3a22"/><path d="M8 64h60v4H8z" fill="#3f7d46"/></svg>
+            <div><h3>Tiny Kingdom: One Decision</h3><span class="tag">Krallık strateji · 9 dil</span> <span class="tag new">Yeni</span></div>
+          </div>
+          <p>Her gün tek bir karar ver, küçük köyünü bir krallığa dönüştür. Kıtlık, yağmacılar, komşu krallıklar ve tahtın kaderi senin vereceğin kararlarda.</p>
+          <ul>
+            <li>600'den fazla olay, zincirleme hikâyeler ve her gün tek bir karar</li>
+            <li>Köyden kasabaya, kasabadan şehre: binalar, ordu ve 4 komşu krallık</li>
+            <li>Hanedan Kitabı: her oyun bir hükümdar, mirasın sonraki kuşağa geçer</li>
+            <li>Türkçe, İngilizce, Almanca, İspanyolca, Fransızca, İtalyanca, Portekizce, Rusça, Endonezce</li>
+          </ul>
+          <div class="small">
+            <span class="tag soon">Yakında Google Play'de</span>
+            <a href="tiny-kingdom/">Gizlilik politikası</a>
+          </div>
+        </div>
+        <div class="tk-art">
+          <img src="img/tk-1.webp" alt="Köy aşamasında krallık binası" width="130" height="130" loading="lazy">
+          <img src="img/tk-2.webp" alt="Kasaba aşamasında krallık binası" width="130" height="130" loading="lazy">
+          <img src="img/tk-3.webp" alt="Şehir aşamasında kale" width="150" height="150" loading="lazy">
+        </div>
+      </article>
       <article class="game wv">
         <div>
           <div class="head">
