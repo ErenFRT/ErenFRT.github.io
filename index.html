@@ -3,9 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tuncer Studio</title>
-<meta name="description" content="Tuncer Studio - Tiny Kingdom: One Decision, Deep Gold, Nope Door, Word Vials ve Letter Harbor mobil oyunlarının geliştiricisi.">
-<link rel="icon" href="img/lh-icon.webp">
+<title>Tuncer Studio · Bağımsız mobil oyun stüdyosu</title>
+<meta name="description" content="Tuncer Studio, Türkiye'den bağımsız bir mobil oyun stüdyosu. Letter Harbor, Deep Gold, Tiny Kingdom, Word Vials ve Nope Door oyunlarının geliştiricisi.">
+<link rel="canonical" href="https://erenfrt.github.io/">
+<meta name="theme-color" content="#123f5c">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="apple-touch-icon" href="img/og.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tuncer Studio">
+<meta property="og:title" content="Tuncer Studio · Küçük stüdyo, keyifli oyunlar">
+<meta property="og:description" content="Letter Harbor, Deep Gold, Tiny Kingdom, Word Vials ve Nope Door. Android için mobil oyunlar.">
+<meta property="og:url" content="https://erenfrt.github.io/">
+<meta property="og:image" content="https://erenfrt.github.io/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tuncer Studio: deniz feneri, yelkenli ve güneşli bir liman manzarası">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tuncer Studio · Küçük stüdyo, keyifli oyunlar">
+<meta name="twitter:description" content="Android için mobil oyunlar: Letter Harbor, Deep Gold, Tiny Kingdom, Word Vials ve Nope Door.">
+<meta name="twitter:image" content="https://erenfrt.github.io/img/og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Tuncer Studio","url":"https://erenfrt.github.io/","logo":"https://erenfrt.github.io/img/og.png","email":"tuncerstudio@gmail.com","sameAs":["https://www.youtube.com/@TuncerStudio","https://www.tiktok.com/@tuncer.studio","https://www.instagram.com/tuncer_studio"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@500;700;800&display=swap">
 <style>
@@ -23,10 +43,11 @@ a{color:var(--gold)}
 
 /* Hero: gökyüzü, güneş, deniz feneri, dalgalar */
 .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--sky1),var(--sky2) 78%,#58b4c9);padding-block:28px 150px}
-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:2}
-.brand{display:flex;align-items:center;gap:10px;font:800 22px var(--display);color:var(--ink);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:2}
+.brand{display:flex;flex:none;align-items:center;gap:10px;font:800 22px var(--display);color:var(--ink);text-decoration:none}
 .brand i{width:34px;height:34px;border-radius:10px;background:var(--gold);display:grid;place-items:center;font-style:normal;color:var(--gold-ink);font-size:18px}
-nav .links{display:flex;gap:18px;font-weight:800;font-size:15px}
+nav .links{display:flex;gap:18px;font-weight:800;font-size:15px;align-items:center}
+.right{display:flex;align-items:center;gap:20px}
 nav .links a{color:var(--ink);text-decoration:none;opacity:.85}
 nav .links a:hover{opacity:1;color:var(--gold)}
 .hero h1{position:relative;z-index:2;font:800 clamp(42px,9vw,78px)/1 var(--display);margin:64px 0 12px;max-width:12ch;text-wrap:balance;text-shadow:0 4px 18px rgba(0,0,0,.25)}
@@ -38,7 +59,7 @@ nav .links a:hover{opacity:1;color:var(--gold)}
 .cloud::before,.cloud::after{content:"";position:absolute;border-radius:50%;background:inherit}
 .cloud::before{width:44px;height:44px;left:16px;top:-22px}
 .cloud::after{width:30px;height:30px;left:52px;top:-12px}
-.c1{width:120px;left:6%;top:120px}.c2{width:150px;right:28%;top:60px}.c3{width:100px;right:4%;top:230px}
+.c1{width:120px;left:6%;top:120px}.c2{width:150px;right:30%;top:150px}.c3{width:100px;right:4%;top:230px}
 .scene{position:absolute;left:0;right:0;bottom:0;height:170px;z-index:1}
 .scene svg{position:absolute;bottom:0;left:0;width:100%;height:100%}
 .boat{animation:bob 4s ease-in-out infinite;transform-origin:center}
@@ -91,24 +112,56 @@ h2{font:800 clamp(30px,5vw,42px)/1.1 var(--display);margin:0 0 8px}
 footer{padding-block:24px 34px;text-align:center;color:var(--muted);font-size:14px}
 footer a{color:var(--muted)}
 
+/* Sosyal medya */
+.social-nav{display:flex;gap:8px}
+.ico{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.12);color:var(--ink);text-decoration:none;transition:background .15s,transform .15s}
+.ico:hover{background:var(--gold);color:var(--gold-ink);transform:translateY(-2px)}
+.ico svg{width:20px;height:20px}
+.group{font:800 15px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin:34px 0 14px;display:flex;align-items:center;gap:12px}
+.group::after{content:"";flex:1;height:1px;background:var(--line)}
+.group:first-of-type{margin-top:0}
+.follow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:6px}
+.follow a{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;color:var(--ink);text-decoration:none;transition:transform .15s,border-color .15s}
+.follow a:hover{transform:translateY(-3px);border-color:var(--gold)}
+.follow .ico{width:52px;height:52px;border-radius:16px;background:var(--gold);color:var(--gold-ink);flex:none}
+.follow .ico svg{width:26px;height:26px}
+.follow b{display:block;font:800 20px/1.1 var(--display)}
+.follow small{color:var(--muted);font-size:14px;font-weight:700}
+a.mail{color:var(--ink);text-decoration:none;user-select:auto;transition:border-color .15s}
+a.mail:hover{border-color:var(--gold)}
+.mail-wrap{display:flex;justify-content:center;margin-bottom:34px}
+.foot{display:grid;gap:12px}
+.foot .row{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px}
+.foot .label{color:var(--ink);font-weight:800}
+
 @media (max-width:760px){
   .game{grid-template-columns:1fr;padding:20px}
   .about{grid-template-columns:1fr}
   nav .links{display:none}
-  .sun{width:64px;height:64px;right:-14px;top:26px}
+  .follow{grid-template-columns:1fr}
+  .c2{display:none}
+  .social-nav .ico{width:34px;height:34px}
+  .sun{width:64px;height:64px;right:-14px;top:96px}
   .hero h1{margin-top:44px}
 }
 </style>
 </head>
 <body>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="sun"></div>
   <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
   <div class="wrap">
     <nav>
-      <a class="brand" href="#"><i>⛵</i>Tuncer Studio</a>
-      <div class="links"><a href="#oyunlar">Oyunlar</a><a href="#hakkinda">Hakkında</a><a href="#iletisim">İletişim</a></div>
+      <a class="brand" href="#top"><i>⛵</i>Tuncer Studio</a>
+      <div class="right">
+        <div class="links"><a href="#oyunlar">Oyunlar</a><a href="#hakkinda">Hakkında</a><a href="#takip">Takip et</a><a href="#iletisim">İletişim</a></div>
+        <div class="social-nav">
+          <a class="ico" href="https://www.youtube.com/@TuncerStudio" target="_blank" rel="noopener me" aria-label="YouTube'da Tuncer Studio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor" stroke="none"/></svg></a>
+          <a class="ico" href="https://www.tiktok.com/@tuncer.studio" target="_blank" rel="noopener me" aria-label="TikTok'ta Tuncer Studio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="17.5" r="3"/><circle cx="17" cy="15.5" r="3"/><path d="M10 17.5V5l10-2v12.5"/><path d="M10 9l10-2"/></svg></a>
+          <a class="ico" href="https://www.instagram.com/tuncer_studio" target="_blank" rel="noopener me" aria-label="Instagram'da Tuncer Studio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
     </nav>
     <h1>Küçük stüdyo, keyifli oyunlar.</h1>
     <p class="lead">Telefonda rahatlatan, her gün dönüp oynamak isteyeceğin oyunlar yapıyoruz.</p>
@@ -140,13 +193,69 @@ footer a{color:var(--muted)}
   <section id="oyunlar">
     <div class="wrap">
       <h2>Oyunlarımız</h2>
-      <p class="sub">Android için, Google Play'de.</p>
+      <p class="sub">Hepsi Android için. Yayındakileri hemen indirebilirsin, diğerleri yolda.</p>
 
+      <h3 class="group">Google Play'de</h3>
+      <article class="game">
+        <div>
+          <div class="head">
+            <img src="img/lh-icon.webp" alt="Letter Harbor simgesi" width="76" height="76">
+            <div><h3>Letter Harbor</h3><span class="tag">Kelime bulmaca · 7 dil</span> <span class="tag live">Yayında</span></div>
+          </div>
+          <p>Harfleri birleştir, bulmacaları çöz ve limandan limana yelken aç. İstanbul'dan başlayan yolculuk dünyanın dört bir yanındaki limanlara uzanıyor.</p>
+          <ul>
+            <li>Binlerce bölüm ve hiç tekrar etmeyen cevap kelimeleri</li>
+            <li>Günün Bulmacası, günlük ödül ve haftalık hedefler</li>
+            <li>Her limanda bir hatıra, başarımlar ve gemi görünümleri</li>
+            <li>Türkçe, İngilizce, İspanyolca, Fransızca, Portekizce, Almanca, İtalyanca</li>
+          </ul>
+          <div class="cta">
+            <a class="play" href="https://play.google.com/store/apps/details?id=com.tuncerstudio.letterharbor" target="_blank" rel="noopener">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png" alt="Google Play'den alın" width="200" height="77">
+            </a>
+            <a href="https://erenfrt.github.io/deepgold-privacy/letter-harbor.html">Gizlilik politikası</a>
+          </div>
+        </div>
+        <div class="shots">
+          <img src="img/lh-1.webp" alt="Letter Harbor oyun ekranı" width="150" height="267" loading="lazy">
+          <img src="img/lh-2.webp" alt="Limana varış ekranı" width="150" height="267" loading="lazy">
+          <img src="img/lh-3.webp" alt="Limanlar haritası" width="150" height="267" loading="lazy">
+        </div>
+      </article>
+
+      <article class="game dg">
+        <div>
+          <div class="head">
+            <img src="img/dg-icon.webp" alt="Deep Gold simgesi" width="76" height="76">
+            <div><h3>Deep Gold: Idle Mining</h3><span class="tag">Madencilik · Idle · 4 dil</span> <span class="tag live">Yayında</span></div>
+          </div>
+          <p>Kazmanı al, derinlere in, altın ve elmas çıkar. Ekibini büyüt, yeni maden bölgeleri aç, sen yokken bile kazanmaya devam et.</p>
+          <ul>
+            <li>Kömürden elmasa, volkanik ve meteor bölgeleri</li>
+            <li>Madenci ekibi, yetenek ağacı ve kazma evrimi</li>
+            <li>Reklamsız oyun</li>
+            <li>Türkçe, İngilizce, Almanca, İspanyolca</li>
+          </ul>
+          <div class="cta">
+            <a class="play" href="https://play.google.com/store/apps/details?id=com.tuncerstudio.deepgold" target="_blank" rel="noopener">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png" alt="Google Play'den alın" width="200" height="77">
+            </a>
+            <a href="https://erenfrt.github.io/deepgold-privacy/">Gizlilik politikası</a>
+          </div>
+        </div>
+        <div class="dg-art" aria-hidden="true">
+          <span style="left:18%;top:24%"></span><span style="left:78%;top:30%;width:6px;height:6px"></span>
+          <span style="left:30%;top:76%;width:7px;height:7px"></span><span style="left:70%;top:72%"></span>
+          <img src="img/dg-icon.webp" alt="" width="120" height="120" loading="lazy">
+        </div>
+      </article>
+
+      <h3 class="group">Yakında</h3>
       <article class="game tk">
         <div>
           <div class="head">
             <svg class="nd-head" viewBox="0 0 76 76" role="img" aria-label="Tiny Kingdom simgesi"><rect width="76" height="76" rx="20" fill="#1f2a5a"/><path d="M38 12v16" stroke="#f3ead2" stroke-width="2"/><path d="M38 13h14l-4 4 4 4H38z" fill="#e7b142"/><rect x="26" y="28" width="24" height="26" fill="#d9cfb4"/><path d="M26 28h4v-4h4v4h4v-4h4v4h4v-4h4v7H26z" fill="#c4b894"/><rect x="12" y="38" width="16" height="26" fill="#cbbf9d"/><rect x="48" y="38" width="16" height="26" fill="#cbbf9d"/><path d="M33 64V54a5 5 0 0 1 10 0v10z" fill="#5b3a22"/><path d="M8 64h60v4H8z" fill="#3f7d46"/></svg>
-            <div><h3>Tiny Kingdom: One Decision</h3><span class="tag">Krallık strateji · 9 dil</span> <span class="tag new">Yeni</span></div>
+            <div><h3>Tiny Kingdom: One Decision</h3><span class="tag">Krallık stratejisi · 9 dil</span></div>
           </div>
           <p>Her gün tek bir karar ver, küçük köyünü bir krallığa dönüştür. Kıtlık, yağmacılar, komşu krallıklar ve tahtın kaderi senin vereceğin kararlarda.</p>
           <ul>
@@ -166,11 +275,12 @@ footer a{color:var(--muted)}
           <img src="img/tk-3.webp" alt="Şehir aşamasında kale" width="150" height="150" loading="lazy">
         </div>
       </article>
+
       <article class="game wv">
         <div>
           <div class="head">
             <img src="img/wv-icon.webp" alt="Word Vials simgesi" width="76" height="76">
-            <div><h3>Word Vials</h3><span class="tag">Tüp sıralama + kelime · 13 dil</span> <span class="tag new">Yeni</span></div>
+            <div><h3>Word Vials</h3><span class="tag">Tüp sıralama + kelime · 13 dil</span></div>
           </div>
           <p>Renkli cam tüplerdeki karışık harfleri tüpten tüpe taşı, gizli kelimeleri kur. Her hamle önemli: en az hamleyle bitir, üç yıldızı kap.</p>
           <ul>
@@ -196,14 +306,14 @@ footer a{color:var(--muted)}
         <div>
           <div class="head">
             <svg class="nd-head" viewBox="0 0 76 76" role="img" aria-label="Nope Door simgesi"><rect width="76" height="76" rx="20" fill="#1d2040"/><rect x="20" y="10" width="36" height="58" rx="5" fill="#ff9f1c"/><circle cx="31" cy="30" r="4" fill="#fff"/><circle cx="45" cy="30" r="4" fill="#fff"/><circle cx="32" cy="31" r="2" fill="#1b1d2e"/><circle cx="46" cy="31" r="2" fill="#1b1d2e"/><path d="M30 39q8 5 16 0" stroke="#1b1d2e" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="50" cy="48" r="2.6" fill="#ffe0a8"/></svg>
-            <div><h3>Nope Door</h3><span class="tag">Trol platform · 12 dil</span> <span class="tag new">Yeni</span></div>
+            <div><h3>Nope Door</h3><span class="tag">Trol platform · 12 dil</span></div>
           </div>
           <p>Tek görev: kapıya dokun. Sorun şu ki kapı kaçıyor, laf atıyor ve her bölümde yeni bir numara çeviriyor. Hiçbir şeye güvenme!</p>
           <ul>
             <li>500 bölüm, 10 dünya ve 10 patron kapı</li>
             <li>Telefonu salla, ters çevir, döndür: bölümler telefonunla oynuyor</li>
             <li>Kostümler, mevsim etkinlikleri ve komik ölümler albümü</li>
-            <li>Türkçe, İngilizce ve 10 dil daha</li>
+            <li>Türkçe, İngilizce, İspanyolca, Portekizce, Rusça, Endonezce, Almanca, Fransızca, Japonca, Korece, Çince, Arapça</li>
           </ul>
           <div class="small">
             <span class="tag soon">Yakında Google Play'de</span>
@@ -212,60 +322,6 @@ footer a{color:var(--muted)}
         </div>
         <div class="nd-art"><svg viewBox="0 0 150 190" aria-hidden="true"><rect x="18" y="14" width="114" height="172" rx="10" fill="#0e1028"/><rect x="22" y="18" width="106" height="168" rx="8" fill="#3a3f7a"/><rect x="28" y="24" width="94" height="162" rx="7" fill="#ff9f1c"/><rect x="40" y="38" width="70" height="56" rx="6" fill="#e8840a"/><rect x="40" y="108" width="70" height="62" rx="6" fill="#e8840a"/><circle cx="60" cy="66" r="7" fill="#fff"/><circle cx="90" cy="66" r="7" fill="#fff"/><circle cx="62" cy="67" r="3.5" fill="#1b1d2e"/><circle cx="92" cy="67" r="3.5" fill="#1b1d2e"/><path d="M58 82q17 10 34 0" stroke="#1b1d2e" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="108" cy="120" r="6" fill="#ffe0a8"/></svg></div>
       </article>
-
-      <article class="game">
-        <div>
-          <div class="head">
-            <img src="img/lh-icon.webp" alt="Letter Harbor simgesi" width="76" height="76">
-            <div><h3>Letter Harbor</h3><span class="tag">Kelime bulmaca · 7 dil</span> <span class="tag live">Yayında</span></div>
-          </div>
-          <p>Harfleri birleştir, bulmacaları çöz ve limandan limana yelken aç. İstanbul'dan başlayan yolculuk dünyanın dört bir yanındaki limanlara uzanıyor.</p>
-          <ul>
-            <li>Binlerce bölüm, hiçbir cevap kelimesi ikinci kez çıkmaz</li>
-            <li>Günün Bulmacası, günlük ödül ve haftalık hedefler</li>
-            <li>Her limanda bir hatıra, başarımlar ve gemi görünümleri</li>
-            <li>Türkçe, İngilizce, İspanyolca, Fransızca, Portekizce, Almanca, İtalyanca</li>
-          </ul>
-          <div class="cta">
-            <a class="play" href="https://play.google.com/store/apps/details?id=com.tuncerstudio.letterharbor" target="_blank" rel="noopener">
-              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png" alt="Google Play'den alın" width="200" height="77">
-            </a>
-            <a href="https://erenfrt.github.io/deepgold-privacy/letter-harbor.html">Gizlilik politikası</a>
-          </div>
-        </div>
-        <div class="shots">
-          <img src="img/lh-1.webp" alt="Letter Harbor oyun ekranı" width="150" height="267" loading="lazy">
-          <img src="img/lh-2.webp" alt="Limana varış ekranı" width="150" height="267" loading="lazy">
-          <img src="img/lh-3.webp" alt="Limanlar haritası" width="150" height="267" loading="lazy">
-        </div>
-      </article>
-
-      <article class="game dg">
-        <div>
-          <div class="head">
-            <img src="img/dg-icon.webp" alt="Deep Gold simgesi" width="76" height="76">
-            <div><h3>Deep Gold: Idle Mining</h3><span class="tag">Madencilik · Idle</span> <span class="tag live">Yayında</span></div>
-          </div>
-          <p>Kazmanı al, derinlere in, altın ve elmas çıkar. Ekibini büyüt, yeni maden bölgeleri aç, sen yokken bile kazanmaya devam et.</p>
-          <ul>
-            <li>Kömürden elmasa, volkanik ve meteor bölgeleri</li>
-            <li>Madenci ekibi, yetenek ağacı ve kazma evrimi</li>
-            <li>Reklamsız oyun</li>
-          </ul>
-          <div class="cta">
-            <a class="play" href="https://play.google.com/store/apps/details?id=com.tuncerstudio.deepgold" target="_blank" rel="noopener">
-              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png" alt="Google Play'den alın" width="200" height="77">
-            </a>
-            <a href="https://erenfrt.github.io/deepgold-privacy/">Gizlilik politikası</a>
-          </div>
-        </div>
-        <div class="dg-art" aria-hidden="true">
-          <span style="left:18%;top:24%"></span><span style="left:78%;top:30%;width:6px;height:6px"></span>
-          <span style="left:30%;top:76%;width:7px;height:7px"></span><span style="left:70%;top:72%"></span>
-          <img src="img/dg-icon.webp" alt="" width="120" height="120" loading="lazy">
-        </div>
-      </article>
-
     </div>
   </section>
 
@@ -281,17 +337,44 @@ footer a{color:var(--muted)}
     </div>
   </section>
 
+  <section id="takip">
+    <div class="wrap">
+      <h2>Bizi takip et</h2>
+      <p class="sub">Yeni oyunlar, perde arkası ve güncellemeler ilk burada.</p>
+      <div class="follow">
+        <a href="https://www.youtube.com/@TuncerStudio" target="_blank" rel="noopener me"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor" stroke="none"/></svg></span><span><b>YouTube</b><small>@TuncerStudio</small></span></a>
+        <a href="https://www.tiktok.com/@tuncer.studio" target="_blank" rel="noopener me"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="17.5" r="3"/><circle cx="17" cy="15.5" r="3"/><path d="M10 17.5V5l10-2v12.5"/><path d="M10 9l10-2"/></svg></span><span><b>TikTok</b><small>@tuncer.studio</small></span></a>
+        <a href="https://www.instagram.com/tuncer_studio" target="_blank" rel="noopener me"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></span><span><b>Instagram</b><small>@tuncer_studio</small></span></a>
+      </div>
+    </div>
+  </section>
+
   <section id="iletisim" class="contact">
     <div class="wrap">
       <h2>İletişim</h2>
       <p class="sub">Öneri, hata bildirimi veya iş birliği için yaz.</p>
-      <span class="mail">✉ tuncerstudio@gmail.com</span>
+      <div class="mail-wrap"><a class="mail" href="mailto:tuncerstudio@gmail.com">✉ tuncerstudio@gmail.com</a></div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Tuncer Studio · <a href="app-ads.txt">app-ads.txt</a></div>
+  <div class="wrap foot">
+    <div class="row"><span class="label">Gizlilik politikaları:</span>
+      <a href="https://erenfrt.github.io/deepgold-privacy/letter-harbor.html">Letter Harbor</a>
+      <a href="https://erenfrt.github.io/deepgold-privacy/">Deep Gold</a>
+      <a href="tiny-kingdom/">Tiny Kingdom</a>
+      <a href="https://erenfrt.github.io/WordVials-privacy/">Word Vials</a>
+      <a href="nope-door/">Nope Door</a>
+    </div>
+    <div class="row">
+      <a href="https://www.youtube.com/@TuncerStudio" target="_blank" rel="noopener me">YouTube</a>
+      <a href="https://www.tiktok.com/@tuncer.studio" target="_blank" rel="noopener me">TikTok</a>
+      <a href="https://www.instagram.com/tuncer_studio" target="_blank" rel="noopener me">Instagram</a>
+      <a href="mailto:tuncerstudio@gmail.com">E-posta</a>
+    </div>
+    <div class="row">© 2026 Tuncer Studio · <a href="app-ads.txt">app-ads.txt</a></div>
+  </div>
 </footer>
 
 </body>
